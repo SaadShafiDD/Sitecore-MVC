@@ -236,15 +236,19 @@
     <Content Include="Views\Header\Header.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Carousel\Index.cshtml" />
+    <Content Include="Views\Navigation\Index.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\CarouselController.cs" />
+    <Compile Include="Controllers\NavigationController.cs" />
     <Compile Include="Extensions\ItemExtension.cs" />
+    <Compile Include="Extensions\SiteExtension.cs" />
     <Compile Include="Models\AboutVM.cs" />
     <Compile Include="Models\CarouselVM.cs" />
+    <Compile Include="Models\NavigationVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

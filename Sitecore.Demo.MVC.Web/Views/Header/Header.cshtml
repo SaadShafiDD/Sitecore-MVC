@@ -19,8 +19,8 @@
                     <h2>@Html.Sitecore().Field("Title", Model.PageItem)</h2>
                 </div>
                 <div class="col-12">
-                    <a href="@Model.PageItem.Parent.GetItemUrl(options)">@Html.Sitecore().Field("Title", Model.PageItem.Parent)</a>
-                    <a href="@Model.PageItem.GetItemUrl(options)">@Html.Sitecore().Field("Title", Model.PageItem)</a>
+                    <a href="@Model.PageItem.Parent.ItemUrl(options)">@Html.Sitecore().Field("Title", Model.PageItem.Parent)</a>
+                    <a href="@Model.PageItem.ItemUrl(options)">@Html.Sitecore().Field("Title", Model.PageItem)</a>
                 </div>
             </div>
         </div>

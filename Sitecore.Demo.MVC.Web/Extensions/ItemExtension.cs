@@ -10,7 +10,7 @@ namespace Sitecore.Demo.MVC.Web.Extensions
 {
     public static class ItemExtension
     {
-        public static string GetItemUrl(this Item item, ItemUrlBuilderOptions options=null)
+        public static string ItemUrl(this Item item, ItemUrlBuilderOptions options=null)
         {
             if (item == null)
                 throw new ArgumentNullException(nameof(Item));

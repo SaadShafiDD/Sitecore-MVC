@@ -1,0 +1,26 @@
+﻿@using Sitecore.Demo.MVC.Web.Models
+@model NavigationVM
+
+@if (Model != null && Model.NavigationItems.Count > 0)
+{
+    <div class="nav-bar">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                <a href="#" class="navbar-brand">MENU</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav mr-auto">
+                        @foreach (var item in Model.NavigationItems)
+                        {
+                            <a href="@item.URL" class="nav-item nav-link @item.ActiveClass">@item.Title</a>
+                        }
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+}
+
