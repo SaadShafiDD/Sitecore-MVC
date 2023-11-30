@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Sitecore.Demo.MVC.Web.Extensions;
 using Sitecore.Mvc.Presentation;
 using Sitecore.Data.Items;
+using Sitecore.Links.UrlBuilders;
 
 namespace Sitecore.Demo.MVC.Web.Controllers
 {
@@ -15,6 +16,9 @@ namespace Sitecore.Demo.MVC.Web.Controllers
         // GET: Navigation
         public ActionResult Index()
         {
+            ItemUrlBuilderOptions options = new ItemUrlBuilderOptions();
+            options.LanguageEmbedding = Links.LanguageEmbedding.Never;
+
             var model = new NavigationVM();
             var list = new List<Navigation>();
             var home = Context.Site.HomeItem();
@@ -22,7 +26,7 @@ namespace Sitecore.Demo.MVC.Web.Controllers
             list.Add(new Navigation()
             {
                 Title = home.Fields["Title"]?.Value,
-                URL = home.ItemUrl(),
+                URL = home.ItemUrl(options),
                 ActiveClass = PageContext.Current.Item.ID == home.ID ? "active" : string.Empty
             });
 
@@ -33,7 +37,7 @@ namespace Sitecore.Demo.MVC.Web.Controllers
                     list.Add(new Navigation()
                     {
                         Title = item.Fields["Title"]?.Value,
-                        URL = item.ItemUrl(),
+                        URL = item.ItemUrl(options),
                         ActiveClass = PageContext.Current.Item.ID == item.ID ? "active" : string.Empty
                     });
                 }
